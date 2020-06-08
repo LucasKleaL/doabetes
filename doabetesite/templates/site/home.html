@@ -1,99 +1,242 @@
 {% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="pt-BR">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" type="text/css">
-  <link rel="stylesheet" href="https://static.pingendo.com/bootstrap/bootstrap-4.3.1.css">
+    <style>
+        body{
+    font-family: 'Roboto', sans-serif;
+}
+
+.row{
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+}
+
+p, li{
+    color: #444;
+    font-size: 14px;
+}
+
+/* Barra de navegação */
+
+header, .navbar{
+    background-color: rgb(249, 249, 249);
+}
+
+#nav-container{
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+#logo {
+    width: 65px;
+}
+
+.navbar-brand{
+    padding: 0;
+    color: #fff;
+}
+
+.navbar-brand:hover{
+    color: #fff;
+}
+
+#navbarLinks{
+    color: rgb(39, 120, 190);
+    text-transform: uppercase;
+    font-size: 17px;
+    
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem rem;
+}
+
+#mainSlider .carousel-inner, #mainSlider .carousel-item{
+    height: 70vh;
+
+}
+
+#mainSlider .carousel-caption{
+    top: 30%;
+}
+
+#mainSlider .carousel-caption h2{
+    font-size: 50px;
+    margin-bottom: 30px;
+
+}
+
+#mainSlider .carousel-caption p{
+    font-size: 22px;
+    font-weight: 300;
+    margin-bottom: 100px;
+    color: #fff;
+}
+
+.main-btn {
+    background-color: rgb(39, 120, 190);
+    color: #fff;
+    text-transform: uppercase;
+    width: 200px;
+    height: 60px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    border: 3px solid transparent;
+    transition: .5s;
+}
+.main-btn:hover{
+    background-color: transparent;
+    border-color: rgb(39, 120, 190);
+    color: #fff;
+    text-decoration: none;
+}
+
+.carousel-indicators .active {
+    background-color: rgb(39, 120, 190);
+}
+
+
+#doabetes {
+    color: rgb(39, 120, 190);
+}
+
+#doabetes:hover{
+    text-decoration: none;
+}
+
+#login-menu, #registro-menu {
+    background-color: #fff;
+    border: 5px solid rgb(39, 120, 190);
+    border-width: 1px;
+    border-radius: 50px;
+    color: rgb(39, 120, 190);
+    padding: 2px 6px;
+
+}
+#login-menu:hover, #registro-menu:hover, #contato-menu:hover, #sobre-menu:hover, #produtos-menu:hover, #ultimas-doa-menu:hover, #depoimentos-menu:hover {
+    background-color: rgb(39, 120, 190);
+    border-color: rgb(39, 120, 190);
+    color: rgb(249, 249, 249);
+    text-decoration: none;
+}
+
+#linksEsquerda a {
+    color: rgb(39, 120, 190);
+    text-transform: uppercase;
+   font-size: 15px;
+}
+.title-map {
+    font-size: 6px;
+}
+
+
+    </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doabetes</title>
+    <!-- Fonte -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap link -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+
+
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+        crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
+    <!-- Parallax -->
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
 </head>
 
 <body>
-  <nav class="navbar navbar-light">
-    <div class="container d-flex justify-content-center"> <a class="navbar-brand text-primary" href="#">
-        <img src="static/img/logo 2redondo.png" alt="some text" width=50 height=50>
-        <img src="static/img/logo_doabetes1.png" alt="some text" width=100 height=40>
-      </a> </div>
-  </nav>
-  <nav class="navbar navbar-expand-md navbar-light">
-    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0" type="button" data-toggle="collapse" data-target="#navbar6">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar6">
-        <ul class="navbar-nav mx-auto">
-          <li class="nav-item"> <a class="nav-link" href="contato">Contato</a> </li>
-          <li class="nav-item"> <a class="nav-link text-primary" href="#"><b>Doações</b></a> </li>
-          <li class="nav-item"> <a class="nav-link" href="sobre">Sobre</a> </li>
-        </ul>
-        <ul class="navbar-nav">
-          <li class="nav-item"> <a class="nav-link" href="login">Log in</a> </li>
-          <li class="nav-item"> <a class="nav-link text-primary" href="registro">Registre-se</a></li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <nav class="navbar navbar-expand-lg navbar-light">
-    <div class="container"> <button class="navbar-toggler navbar-toggler-right border-0 p-0" type="button" data-toggle="collapse" data-target="#navbar8">
-        <p class="navbar-brand text-primary mb-0">
-          <i class="fa d-inline fa-lg fa-stop-circle"></i> BRAND </p>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar8">
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item"> <a class="nav-link" href="produtos">Produtos</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Últimas doações</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Depoimentos</a> </li>
-        </ul>
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item mx-1"> <a class="nav-link" href="#">
-              <i class="fa fa-fw fa-user"></i>
-            </a> </li>
-          <li class="nav-item mx-1"> <a class="nav-link" href="#">
-              <i class="fa fa-fw fa-bell"></i>
-            </a> </li>
-          <li class="nav-item mx-1"> <a class="nav-link" href="#">
-              <i class="fa fa-fw fa-comments"></i>
-            </a> </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
-  <div class="py-5">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-11 bg-light" style="">
-          <div class="carousel slide" data-ride="carousel" id="carousel" style="" data-interval="5000">
+    <header>
+        <div class="container" id="nav-container">
+            <nav class="navbar navbar-expand-lg fixed-top">
+                <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
+                    DOABETES </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
+                    aria-controls="#navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
+                    <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
+                    <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
+                    <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
+                    <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+                    <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+                </div>
+                <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
+                    <div class="navbar-nav">
+                        <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
+                        <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
+
+                    </div>
+                </div>
+        </div>
+        </nav>
+    </header>
+    <main>
+        <div class="container-fluid"></div>
+        <div id="mainSlider" class="carousel slide" data-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
+                <li data-target="#mainSlider" data-slide-to="1"></li>
+            </ol>
             <div class="carousel-inner">
-              <div class="carousel-item active"> <img class="d-block img-fluid w-75 mx-5" src="static/img/banner página principal.jpg">
-              </div>
-              <div class="carousel-item"> <img class="d-block img-fluid w-75" src="https://static.pingendo.com/cover-bubble-light.svg">
-              </div>
-              <div class="carousel-item"> <img class="d-block img-fluid w-75" src="https://static.pingendo.com/cover-moon.svg">
-              </div>
-            </div> <a class="carousel-control-next mr-2" href="#carousel" role="button" data-slide="next"> <span class="carousel-control-next-icon"></span> <span class="sr-only">Next</span> </a>
-          </div>
+                <div class="carousel-item active">
+                    <img id="imagem1" src="static/img/insumos_2.jpg" class="d-block w-100" alt="Insulina">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="carousel-h2">Procura insulina para doação?</h2>
+                        <p>Conte conosco, temos um serviço para te auxiliar.</p>
+                        <a href="#" class="main-btn">Ver insumos disponíveis</a>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="static/img/insumos_3.jpg" class="d-block w-100" alt="Acessórios">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h2 class="carousel-h2">Também temos diversos acessórios</h2>
+                        <p>Conte conosco, temos um serviço para te auxiliar.</p>
+                        <a href="#" class="main-btn">Ver acessórios disponíveis</a>
+                    </div>
+                </div>
+            </div>
+            <a href="#mainSlider" class="carousel-control-prev" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Voltar</span>
+            </a>
+            <a href="#mainSlider" class="carousel-control-next" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Próximo</span>
+            </a>
         </div>
-      </div>
-    </div>
-  </div>
-  <div class="py-5" style="">
-    <div class="container">
-      <div class="row">
+        <div class="row">
         <div class="col-md-12">
-          <h1 class="m-0 ml-5 mx-5" style="">Acompanhe a movimentação de doações no Brasil</h1>
+          <h1 id="title-map" style="font-size: 31px;">Acompanhe a movimentação de doações no Brasil</h1>
         </div>
       </div>
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-md-11 w-100" style=""><iframe width="100%" height="400" scrolling="no" frameborder="0" src="https://maps.google.com/maps?q=New%20York&amp;z=14&amp;output=embed"></iframe></div>
+        <div class="col-md-11 w-100" style=""><iframe width="75%" height="350" scrolling="no" frameborder="1" src="https://maps.google.com/maps?q=Curitiba&amp;z=14&amp;output=embed"></iframe></div>
       </div>
     </div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  <pingendo onclick="window.open('https://pingendo.com/', '_blank')" style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block" alt="Pingendo logo" height="16"></pingendo>
+    </main>
+    <script src="js/scripts.js"></script>
 </body>
 
 </html>
