@@ -350,6 +350,25 @@
   <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
   <!-- Parallax -->
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script type="text/javascript">
+    function validar() {
+      var email_login = formuser.email_login.value;
+      var senha_login = formuser.senha_login.value;
+
+      if (email_login == "") {
+        alert('Preencha o campo de e-mail.');
+        formuser.email_login.focus();
+        return false;
+      }
+
+      if (senha_login == "") {
+        alert('Preencha o campo de senha.');
+        formuser.senha_login.focus();
+        return false;
+      }
+
+    }
+  </script>
 </head>
 
 <body>
@@ -384,18 +403,15 @@
   <body>
     <!--FORMULÁRIO DE LOGIN-->
     <div id="login">
-      <form method="post" action="">
-        <h1>Login</h1>
-        <p>
-          <label for="nome_login">Email:</label>
-          <input id="nome_login" name="nome_login" required="required" type="text"
-            placeholder="ex. seuemail@mail.com" />
-        </p>
+      <form name="formuser" method="post" action="">
+        <h1 style="font-family: roboto;">Login</h1>
 
-        <p>
-          <label for="email_login">Senha:</label>
-          <input id="email_login" name="email_login" required="required" type="password" placeholder="ex. senha" />
-        </p>
+          Email:<input id="email_login" name="email_login" required="required" type="text" placeholder="ex. seuemail@mail.com" />
+
+        
+          Senha:<input id="senha_login" name="senha_login" autocomplete="off" required="required" type="password"
+            placeholder="ex. senha" />
+
 
         <p>
           <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
@@ -403,12 +419,12 @@
         </p>
 
         <p>
-          <input type="submit" value="Logar" />
+          <input type="submit" onclick="return validar()" value="Logar" />
         </p>
 
         <p class="link">
           Ainda não tem conta?
-          <a href="#paracadastro">Cadastre-se</a>
+          <a href="registro">Cadastre-se</a>
         </p>
       </form>
     </div>
