@@ -177,30 +177,30 @@
 <body>
   <header>
     <div class="container" id="nav-container">
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
-          DOABETES </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
-          aria-controls="#navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
-          <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
-          <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
-          <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
-          <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
-          <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
-        </div>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
-          <div class="navbar-nav">
-            <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
-            <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
+                DOABETES </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
+                aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
+            </button>
+            <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
+                <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
+                <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
+                <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
+                <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+                <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+            </div>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
+                    <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
 
-          </div>
-        </div>
+                </div>
+            </div>
     </div>
     </nav>
-  </header>
+</header>
   </head>
 
   <div class="py-5">

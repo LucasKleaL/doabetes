@@ -344,14 +344,14 @@ input[type="submit"]:hover{
 </head>
 
 <body>
-<header>
+  <header>
     <div class="container" id="nav-container">
         <nav class="navbar navbar-expand-lg fixed-top">
             <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
                 DOABETES </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks"
-                aria-controls="#navbarLinks" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
+                aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
             </button>
             <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
                 <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
@@ -369,7 +369,7 @@ input[type="submit"]:hover{
             </div>
     </div>
     </nav>
-    </header>
+</header>
 </head>
 
 <body>
