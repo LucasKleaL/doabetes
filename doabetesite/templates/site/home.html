@@ -1,141 +1,151 @@
 {% load static %}
-<!DOCTYPE html><!-- Oi pessoal! Estou fazendo um teste de comentário pro git-->
+<!DOCTYPE html>
 <html lang="pt-BR">
 
 <head>
     <style>
-        body{
-    font-family: 'Roboto', sans-serif;
-}
+        body {
+            font-family: 'Roboto', sans-serif;
+        }
 
-.row{
-    margin: 0;
-}
+        .row {
+            margin: 0;
+        }
 
-.container {
-    padding: 70px 0;
-}
+        .container {
+            padding: 70px 0;
+        }
 
-p, li{
-    color: #444;
-    font-size: 14px;
-}
+        p,
+        li {
+            color: #444;
+            font-size: 14px;
+        }
 
-/* Barra de navegação */
+        /* Barra de navegação */
 
-header, .navbar{
-    background-color: rgb(249, 249, 249);
-}
+        header,
+        .navbar {
+            background-color: rgb(249, 249, 249);
+        }
 
-#nav-container{
-    padding-top: 0;
-    padding-bottom: 0;
-}
+        #nav-container {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
 
-#logo {
-    width: 65px;
-}
+        #logo {
+            width: 65px;
+        }
 
-.navbar-brand{
-    padding: 0;
-    color: #fff;
-}
+        .navbar-brand {
+            padding: 0;
+            color: #fff;
+        }
 
-.navbar-brand:hover{
-    color: #fff;
-}
+        .navbar-brand:hover {
+            color: #fff;
+        }
 
-#navbarLinks{
-    color: rgb(39, 120, 190);
-    text-transform: uppercase;
-    font-size: 17px;
-    
-}
+        #navbarLinks {
+            color: rgb(39, 120, 190);
+            text-transform: uppercase;
+            font-size: 17px;
 
-.navbar-expand-lg .navbar-nav .nav-link {
-    padding: 1rem rem;
-}
+        }
 
-#mainSlider .carousel-inner, #mainSlider .carousel-item{
-    height: 70vh;
+        .navbar-expand-lg .navbar-nav .nav-link {
+            padding: 1rem rem;
+        }
 
-}
+        #mainSlider .carousel-inner,
+        #mainSlider .carousel-item {
+            height: 70vh;
 
-#mainSlider .carousel-caption{
-    top: 30%;
-}
+        }
 
-#mainSlider .carousel-caption h2{
-    font-size: 50px;
-    margin-bottom: 30px;
+        #mainSlider .carousel-caption {
+            top: 30%;
+        }
 
-}
+        #mainSlider .carousel-caption h2 {
+            font-size: 50px;
+            margin-bottom: 30px;
 
-#mainSlider .carousel-caption p{
-    font-size: 22px;
-    font-weight: 300;
-    margin-bottom: 100px;
-    color: #fff;
-}
+        }
 
-.main-btn {
-    background-color: rgb(39, 120, 190);
-    color: #fff;
-    text-transform: uppercase;
-    width: 200px;
-    height: 60px;
-    padding: 10px 20px;
-    border-radius: 30px;
-    border: 3px solid transparent;
-    transition: .5s;
-}
-.main-btn:hover{
-    background-color: transparent;
-    border-color: rgb(39, 120, 190);
-    color: #fff;
-    text-decoration: none;
-}
+        #mainSlider .carousel-caption p {
+            font-size: 22px;
+            font-weight: 300;
+            margin-bottom: 100px;
+            color: #fff;
+        }
 
-.carousel-indicators .active {
-    background-color: rgb(39, 120, 190);
-}
+        .main-btn {
+            background-color: rgb(39, 120, 190);
+            color: #fff;
+            text-transform: uppercase;
+            width: 200px;
+            height: 60px;
+            padding: 10px 20px;
+            border-radius: 30px;
+            border: 3px solid transparent;
+            transition: .5s;
+        }
 
+        .main-btn:hover {
+            background-color: transparent;
+            border-color: rgb(39, 120, 190);
+            color: #fff;
+            text-decoration: none;
+        }
 
-#doabetes {
-    color: rgb(39, 120, 190);
-}
-
-#doabetes:hover{
-    text-decoration: none;
-}
-
-#login-menu, #registro-menu {
-    background-color: #fff;
-    border: 5px solid rgb(39, 120, 190);
-    border-width: 1px;
-    border-radius: 50px;
-    color: rgb(39, 120, 190);
-    padding: 2px 6px;
-
-}
-#login-menu:hover, #registro-menu:hover, #contato-menu:hover, #sobre-menu:hover, #produtos-menu:hover, #ultimas-doa-menu:hover, #depoimentos-menu:hover {
-    background-color: rgb(39, 120, 190);
-    border-color: rgb(39, 120, 190);
-    color: rgb(249, 249, 249);
-    text-decoration: none;
-    }
-
-#linksEsquerda a {
-    color: rgb(39, 120, 190);
-    text-transform: uppercase;
-   font-size: 15px;
-}
-.title-map {
-    font-size: 6px;
-}
+        .carousel-indicators .active {
+            background-color: rgb(39, 120, 190);
+        }
 
 
+        #doabetes {
+            color: rgb(39, 120, 190);
+        }
 
+        #doabetes:hover {
+            text-decoration: none;
+        }
+
+        #login-menu,
+        #registro-menu {
+            background-color: #fff;
+            border: 5px solid rgb(39, 120, 190);
+            border-width: 1px;
+            border-radius: 50px;
+            color: rgb(39, 120, 190);
+            padding: 2px 6px;
+
+        }
+
+        #login-menu:hover,
+        #registro-menu:hover,
+        #contato-menu:hover,
+        #sobre-menu:hover,
+        #produtos-menu:hover,
+        #ultimas-doa-menu:hover,
+        #depoimentos-menu:hover {
+            background-color: rgb(39, 120, 190);
+            border-color: rgb(39, 120, 190);
+            color: rgb(249, 249, 249);
+            text-decoration: none;
+        }
+
+        #linksEsquerda a {
+            color: rgb(39, 120, 190);
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+
+        .title-map {
+            font-size: 6px;
+        }
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -170,8 +180,9 @@ header, .navbar{
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
                     DOABETES </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
-                    aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarLinks, #linksEsquerda" aria-controls="#navbarLinks, #linksEsquerda"
+                    aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
                 </button>
                 <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
@@ -182,11 +193,8 @@ header, .navbar{
                     <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
-                    <div class="navbar-nav">
-                        <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
-                        <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
-
-                    </div>
+                    <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
+                    <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
                 </div>
         </div>
         </nav>
@@ -204,7 +212,7 @@ header, .navbar{
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="carousel-h2">Procura insulina para doação?</h2>
                         <p>Conte conosco, temos um serviço para te auxiliar.</p>
-                        <a href="#" class="main-btn">Ver insumos disponíveis</a>
+                        <a href="produtos" class="main-btn">Ver insumos disponíveis</a>
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -212,7 +220,7 @@ header, .navbar{
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="carousel-h2">Também temos diversos acessórios</h2>
                         <p>Conte conosco, temos um serviço para te auxiliar.</p>
-                        <a href="#" class="main-btn">Ver acessórios disponíveis</a>
+                        <a href="produtos" class="main-btn">Ver acessórios disponíveis</a>
                     </div>
                 </div>
             </div>
@@ -225,18 +233,21 @@ header, .navbar{
                 <span class="sr-only">Próximo</span>
             </a>
         </div>
-        <br><br><br><br>
         <div class="row">
-        <div class="col-md-12">
-          <h1 id="title-map" style="font-size: 31px; text-align: center;">Acompanhe a movimentação de doações no Brasil</h1>
+            <div class="col-md-12">
+                <h1 id="title-map" style="padding-top: 35px; text-align: center;font-family: roboto; font-size: 31px;">
+                    Acompanhe a movimentação de doações no Brasil</h1>
+            </div>
         </div>
-      </div>
-    </div>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-11 w-100" style=""; style="font-size: large; text-align: center; display: inline-block;"><iframe width="75%" height="350" scrolling="no" frameborder="1" src="https://www.google.com/maps/d/u/0/embed?mid=1C79VECHdWofDRex5HYHKD1To_J2r3Cti"></iframe></div>
-      </div>
-    </div>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-11 w-100" style="padding-top: 0px; padding-left: 120px;"><iframe width="100%"
+                        height="420" scrolling="no" frameborder="1"
+                        src="https://www.google.com/maps/d/u/0/embed?mid=1C79VECHdWofDRex5HYHKD1To_J2r3Cti"></iframe>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="js/scripts.js"></script>
 </body>
