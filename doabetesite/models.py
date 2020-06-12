@@ -7,7 +7,6 @@ class Anuncio(models.Model):
     title = models.CharField(max_length=200)
     descricao = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    fotoProduto = models.ImageField(uploud_to='', blank=True, null=True, verbose_name='Foto do Produto')
 
     def publish(self):
         self.published_date = timezone.now()
