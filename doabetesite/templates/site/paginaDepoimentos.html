@@ -150,16 +150,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Doabetes</title>
-  <link rel="shortcut icon" href="static/img/logo-branco.png">
+  <link rel="shortcut icon" href="static/img/logo 2redondo.png">
   <!-- Fonte -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <!-- Bootstrap link -->
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
     integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-
-
-
   <!-- Scripts -->
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"
     integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
@@ -177,61 +174,101 @@
 
 <body>
   <header>
-    <div class="container" id="nav-container">
+    <header>
+
+      <div class="container" id="nav-container">
         <nav class="navbar navbar-expand-lg fixed-top">
-            <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo-branco.png' %}" alt="Doabetes">
-                DOABETES </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
-                aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
-            </button>
-            <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
-                <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
-                <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
-                <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
-                <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
-                <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
-            </div>
-            <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
-                <div class="navbar-nav">
-                    <a class="nav-item nav-link" id="login-menu" href="login"style="margin: 15px">Login</a>
-                    <a class="nav-item nav-link" id="registro-menu" href="registro" style="margin: 15px">Registre-se</a>
-
-                </div>
-            </div>
-    </div>
-    </nav>
-</header>
-  </head>
-
-  <div class="py-5">
-    <div class="py-5">
-      <h1 style="font-family: roboto; text-align: center;">Sobre</h1>
-      <div class="container">
-        <div class="row">
-          <p style="font-family: Roboto, Helvetica, sans-serif;font-size:19px;font-style: normal; text-align: center;">A
-            plataforma DOAbetes tem como missão conectar a diábeticos no Brasil, ao fornecer uma plataforma de troca de
-            informações e insumos para garantir melhor qualidade de vida e favorecer a economia sustentável por meio de
-            doações, sem fins lucrativos.
-            <br>Desenvolvida por Loraine Mendes, Lucas Kusman Leal, Tiago Muller e Vitor Felix Araujo, estudantes de
-            Bacharelado de Sistemas de Informação (PUCPR), para a disciplina de Experiência Criativa - 1º período. </br>
-            </h1>
-        </div>
-      </div>
-    </div>
-  </div>
-  </div>
-
-  <body>
-
-    
-    </nav>
+          <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo-branco.png' %}" alt="Doabetes">
+            DOABETES </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
+            aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
+          </button>
+          <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
+            {% if user.is_authenticated %}
+            <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
+            <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
+            <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
+            <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+            <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+            {% else %}
+            <a class="nav-item nav-link" id="depoimentos-menu" href="#">Depoimentos</a>
+            <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+            <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+            {% endif %}
 
           </div>
-        </div>
+          <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
+            {% if user.is_authenticated %}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+            </li>
+            {% else %}
+            <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" id="registro-menu" href='/account/registro'>Registre-se</a>
+            {% endif %}
+          </div>
+      </div>
+      </nav>
+    </header>
+  </header>
+  </head>
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <h3>
+          Depoimentos
+        </h3>
+        <p>
+          Confira o que os usuários têm a dizer sobre a plataforma DOAbetes.
+        </p>
       </div>
     </div>
-
-  </body>
+    <div class="row">
+      <div class="col-md-4">
+        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+        <h2>
+          Ana M. Nascimento
+        </h2>
+        <p>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+          Donec sed odio dui.
+        </p>
+        <p>
+          <a class="btn" href="#">View details »</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+        <h2>
+          Eduardo F. Eldrisch
+        </h2>
+        <p>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+          Donec sed odio dui.
+        </p>
+        <p>
+          <a class="btn" href="#">View details »</a>
+        </p>
+      </div>
+      <div class="col-md-4">
+        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+        <h2>
+          Pedro C. Soares
+        </h2>
+        <p>
+          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+          Donec sed odio dui.
+        </p>
+        <p>
+          <a class="btn" href="#">View details »</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</body>
 
 </html>

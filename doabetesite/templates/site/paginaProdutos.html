@@ -149,7 +149,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Doabetes</title>
-<link rel="shortcut icon" href="static/img/logo 2redondo.png">
+<link rel="shortcut icon" href="static/img/logo-branco.png">
 <!-- Fonte -->
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
 <!-- Bootstrap link -->
@@ -179,8 +179,7 @@
   <header>
     <div class="container" id="nav-container">
       <nav class="navbar navbar-expand-lg fixed-top">
-        <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
-          DOABETES </a>
+        <a id="doabetes" href="{% url 'home' %}"><img id="logo" src="{% static 'img/logo-branco.png' %}" alt="Doabetes">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
           aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
           <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
@@ -194,8 +193,8 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
-            <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
+            <a class="nav-item nav-link" id="login-menu" href="login" style="margin: 15px">Login</a>
+            <a class="nav-item nav-link" id="registro-menu" href="registro" style="margin: 15px">Registre-se</a>
 
           </div>
         </div>
@@ -206,31 +205,72 @@
     <div class="container" id="col-md-12">
       <div class="row">
         <div class="col-md-12">
-          <h1 class="display-4">Confira os produtos mais comuns oferecidos no site:<br><br></h1>
-          <h1 class="">Seringas para aplicação de isulina<br><br></h1>
-          <a href="Seringas_para_aplicação_de_insulina_.html"> Seringas para aplicação de insulina</a>
-          <a id="doabetes" href="Seringas_para_aplicação_de_insulina_"><br><img id="seringa_aplicacao"
-              src="{% static 'img/produto_imagem/seringa_aplicacao.png' %}"></a>
-
+          <h1 class="display-4" id="" style="padding-top: 35px; text-align: left;font-family: roboto; font-size: 31px;">
+            <b>Confira os produtos oferecidos no site:</b><br><br></h1>
         </div>
-      </div>
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="">Aparelhos para medição de glicose<br><br></h1>
-          <h1 class="">Lancetas para medição de glicose<br><br></h1>
+        <div class="container-fluid">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-4">
+                <a href="https://www.qries.com/">
+                  <img alt="aparelhomedidor" src="static/img/produto_imagem/aparelho.png" width=280 height="180"><br>
+                  <h2>Aparelho medidor de glicose e acessórios</h2>
+                  <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui.
+                  </p>
+                  <p>
 
-          <a href="Lancetas_para_medição_de_glicose.html">Lancetas para medição de glicose</a>
-          <h1 class="">Insumos de bomba de insulina</h1>
-          <a href="Insumos_de_bomba_de_insulina.html">Insumos de bomba de insulina></a>
-          <br>The following image works as a link:<br>
-          <a href="https://www.qries.com/">
-            <img alt="Qries" src="https://www.qries.com/images/banner_logo.png" width=150 height="70">
-          </a>
+                    <a href="https://www.qries.com/">
+                      <img alt="orto" src="static/img/produto_imagem/orto.png" width=280 height="180"><br>
+                      <h3>Acessórios ortopédicos</h3>
+              </div>
+              <div class="col-md-4">
+                <a href="https://www.qries.com/">
+                  <img alt="canetaaplicacao" src="static/img/produto_imagem/caneta.png" width=280 height="180"><br>
+                  <h2>Seringas e canetas de aplicação</h2>
+                  <p>
+                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                    mollis euismod. Donec sed odio dui.
+                  </p>
+                  <p><br>
 
-
+                    <a href="https://www.qries.com/">
+                      <img alt="bombadeinsulina" src="static/img/produto_imagem/bomba.png" width=280 height="180"><br>
+                      <h2>Insumos de bomba de insulina</h2>
+              </div>
+              <div class="col-md-4">
+                <h2>
+                  <a href="https://www.qries.com/">
+                    <img alt="insulina" src="static/img/produto_imagem/insulina.png" width=280 height="180"><br>
+                    Insulinas e outros medicamentos</h2>
+                <p>
+                  Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+                  mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+                  mollis euismod. Donec sed odio dui.
+                </p>
+                <p><br>
+                <h2>
+                  <a href="https://www.qries.com/">
+                    <img alt="insulina" src="static/img/produto_imagem/baterias.png" width=280 height="180"><br>
+                    Pilhas, baterias e carregadores</h2>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+  </div>
+  </div>
+  </div>
+
+
+  </div>
+  </div>
+  </div>
   </div>
 
 </body>

@@ -12,4 +12,6 @@ def contato(request):
     return render(request, 'site/paginaContato.html', {})
 def produtos(request):
     return render(request, 'site/paginaProdutos.html', {})
+def depoimentos(request):
+    return render(request, 'site/paginaDepoimentos.html', {})
 
