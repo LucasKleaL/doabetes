@@ -375,7 +375,7 @@
   <header>
     <div class="container" id="nav-container">
       <nav class="navbar navbar-expand-lg fixed-top">
-        <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
+        <a id="doabetes" href="{% url 'home' %}"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
           DOABETES </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
           aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
@@ -390,8 +390,8 @@
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
           <div class="navbar-nav">
-            <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
-            <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
+            <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" id="registro-menu" href="/account/registro">Registre-se</a>
 
           </div>
         </div>
@@ -404,14 +404,14 @@
     <!--FORMULÁRIO DE LOGIN-->
     {% block content %}
     <div class="container">
-        <h1>Faça o seu login</h1>
-        <form action="." method="post">
-            {% csrf_token %}
-            {{ form.as_p }}
-            <input class="btn btn-primary" type="submit" value="Login">
-        </form>
+      <h1>Faça o seu login</h1>
+      <form action="." method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Login">
+      </form>
     </div>
-{% endblock %}
+    {% endblock %}
   </body>
 
 </html>

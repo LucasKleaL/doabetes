@@ -143,6 +143,9 @@
       font-size: 15px;
     }
 
+    .title-map {
+      font-size: 6px;
+    }
 
     /* CSS reset */
     *,
@@ -153,7 +156,10 @@
       font-family: Arial, sans-serif;
     }
 
-    /* remove a linha dos links */
+    body {
+      margin: 10px;
+    }
+
     a {
       text-decoration: none;
     }
@@ -163,18 +169,19 @@
       display: none;
     }
 
+    /* content que contem os formulários */
     .content {
       width: 500px;
-      min-height: 560px;
       margin: 0px auto;
       position: relative;
     }
 
+    /* formatando o cabeçalho dos formulários */
     h1 {
       font-size: 48px;
       color: rgb(39, 120, 190);
-      padding: 9px 0 10px 0;
-      font-family: Roboto, sans-serif;
+      padding: 10px 0;
+      font-family: Arial, sans-serif;
       font-weight: bold;
       text-align: center;
       padding-bottom: 30px;
@@ -187,14 +194,14 @@
       height: 2px;
       margin-top: 10px;
       background: -webkit-linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgb(39, 120, 190) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
-      background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgba(147, 184, 189, 1) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
+      background: linear-gradient(left, rgba(147, 184, 189, 0) 0%, rgba(147, 184, 189, 0.8) 20%, rgb(39, 120, 190) 53%, rgba(147, 184, 189, 0.8) 79%, rgba(147, 184, 189, 0) 100%);
     }
 
     p {
       margin-bottom: 15px;
     }
 
-    .content p:first-child {
+    p:first-child {
       margin: 0px;
     }
 
@@ -202,6 +209,7 @@
       color: #405c60;
       position: relative;
     }
+
 
     /* placeholder */
     ::-webkit-input-placeholder {
@@ -219,7 +227,6 @@
       outline: none;
     }
 
-    /*estilo dos input,  menos o checkbox */
     input:not([type="checkbox"]) {
       width: 95%;
       margin-top: 4px;
@@ -254,21 +261,21 @@
       transition: all 0.2s linear;
     }
 
-    /*estilo do botão submit no hover */
     input[type="submit"]:hover {
       background: rgb(0, 66, 124);
     }
 
+    /*marcando os links para mudar de um formulário para outro */
     .link {
       position: absolute;
       background: #e1eaeb;
-      color: #7f7c7c;
-      left: 10px;
+      color: #5c4747;
+      left: 0px;
       height: 20px;
       width: 440px;
-      padding: 20px 40px 20px 30px;
+      padding: 17px 30px 20px 30px;
       font-size: 16px;
-      text-align: center;
+      text-align: right;
       border-top: 1px solid #dbe5e8;
 
       -webkit-border-radius: 0 0 5px 5px;
@@ -294,19 +301,18 @@
       color: #39bfd7;
       background: #f7f7f7;
       border: 1px solid #4ab3c6;
-
     }
 
-    #cadastro {
+    /* estilos para para ambos os formulários */
+    #login {
       position: absolute;
       top: 100px;
       width: 88%;
       padding: 18px 6% 60px 6%;
       margin: 0 0 35px 0;
-      background: #f7f7f7;
+      background: rgb(247, 247, 247);
       border: 1px solid rgb(39, 120, 190);
 
-    
       border-radius: 5px;
 
       -webkit-animation-duration: 0.5s;
@@ -316,24 +322,6 @@
       animation-duration: 0.5s;
       animation-timing-function: ease;
       animation-fill-mode: both;
-    }
-
-    /* Efeito ao clicar no botão ( Ir para Login ) */
-    #paracadastro:target~.content #cadastro,
-    #paralogin:target~.content #login {
-      z-index: 2;
-      -webkit-animation-name: fadeInLeft;
-      animation-name: fadeInLeft;
-
-      -webkit-animation-delay: .1s;
-      animation-delay: .1s;
-    }
-
-    /* Efeito ao clicar no botão ( Cadastre-se ) */
-    #registro:target~.content #login,
-    #paralogin:target~.content #cadastro {
-      -webkit-animation-name: fadeOutLeft;
-      animation-name: fadeOutLeft;
     }
   </style>
   <meta charset="UTF-8">
@@ -362,128 +350,69 @@
   <script src="https://kit.fontawesome.com/bf7e05c402.js" crossorigin="anonymous"></script>
   <!-- Parallax -->
   <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
-
   <script type="text/javascript">
     function validar() {
-      var nome_cad = formuser.nome_cad.value;
-      var desc_cad = formuser.desc_cad.value;
-      var cep_cad = formuser.cep_cad.value;
-      var email_cad = formuser.email_cad.value;
-      var senha_cad = formuser.senha_cad.value;
+      var email_login = formuser.email_login.value;
+      var senha_login = formuser.senha_login.value;
 
-      if (nome_cad == "") {
-        alert('Preencha o campo nome.');
-        formuser.nome_cad.focus();
-        return false;
-      }
-
-      if (desc_cad == "") {
-        alert('Preencha o campo de descrição.');
-        formuser.desc_cad.focus();
-        return false;
-      }
-
-      if (cep_cad == "") {
-        alert('Preencha o seu CEP.');
-        formuser.cep_cad.focus();
-        return false;
-      }
-
-      if (email_cad == "") {
+      if (email_login == "") {
         alert('Preencha o campo de e-mail.');
-        formuser.email_cad.focus();
-        return false;
-      }
-      
-      if (senha_cad == "") {
-        alert('Preencha o campo de senha.');
-        formuser.senha_cad.focus();
+        formuser.email_login.focus();
         return false;
       }
 
+      if (senha_login == "") {
+        alert('Preencha o campo de senha.');
+        formuser.senha_login.focus();
+        return false;
+      }
 
     }
   </script>
 </head>
 
-
-<header>
-  <div class="container" id="nav-container">
-    <nav class="navbar navbar-expand-lg fixed-top">
-      <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
-        DOABETES </a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
-        aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
-        <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
-      </button>
-      <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
-        <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
-        <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
-        <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
-        <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
-        <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
-          <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
-
-        </div>
-      </div>
-  </div>
-  </nav>
-</header>
-
 <body>
-  <div class="container">
-    <a class="links" id="paracadastro"></a>
-    <a class="links" id="paralogin"></a>
-    <!--FORMULÁRIO DE CADASTRO-->
-    <div id="cadastro">
-      <form name="formuser" action="enviar.php" method="post" action="">
-        <h1>Cadastro</h1>
+  <header>
+    <div class="container" id="nav-container">
+      <nav class="navbar navbar-expand-lg fixed-top">
+        <a id="doabetes" href="{% url 'home' %}"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
+          DOABETES </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarLinks, #linksEsquerda"
+          aria-controls="#navbarLinks, #linksEsquerda" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
+        </button>
+        <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
+          <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
+          <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
+          <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
+          <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+          <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+        </div>
+        <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
+          <div class="navbar-nav">
+            <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
 
-        <p>
-          <label for="nome_cad">Seu nome:</label>
-          <input id="nome_cad" name="nome_cad" required="required" type="text"
-            placeholder="Informe sem nome completo" />
-        </p>
+          </div>
+        </div>
+    </div>
+    </nav>
+  </header>
+  </head>
 
-        <p>
-          <label for="desc_cad">Descrição:</label>
-          <input id="desc_cad" name="desc_cad" required="required" type="text"
-            placeholder="Escreva uma pequena bio sobre quem é você e seus objetivos no DOAbetes" />
-        </p>
+  <body>
+    <!--FORMULÁRIO DE Registro-->
+    {% block content %}
+    <div class="container">
+      <h1>Registre-se</h1>
+      <form action="." method="post">
+        {% csrf_token %}
 
-        <p>
-          <label for="cep_cad">CEP (somente números):</label>
-          <input id="cep_cad" name="cep_cad" required="required" type="number" placeholder="Informe o seu CEP" />
-        </p>
-
-        <p>
-          <label for="email_cad">Seu e-mail:</label>
-          <input id="email_cad" name="email_cad" required="required" type="email" placeholder="seuemail@mail.com" />
-          
-        </p>
-
-        <p>
-          <label for="senha_cad">Sua senha:</label>
-          <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="Senha" />
-          <input id="senha_cad" name="senha_cad" required="required" type="password" placeholder="Confirme sua senha" />
-        </p>
-
-        <p>
-          <input type="submit" onclick="return validar()" value="Cadastrar" />
-        </p>
-
-        <p class="link">
-          Já tem conta?
-          <a href="login"> Ir para Login </a>
-        </p>
+        {{ form.as_p }}
+        <input class="btn btn-primary" type="submit" value="Registrar">
       </form>
     </div>
-  </div>
-  </div>
-</body>
+    {% endblock %}
+  </body>
 
 </html>

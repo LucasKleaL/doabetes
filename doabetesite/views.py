@@ -3,7 +3,7 @@ from django.shortcuts import render
 def home(request):
     return render(request, 'site/home.html', {})
 def registro(request):
-    return render(request, 'site/paginaRegistro.html', {})
+    return render(request, 'registration/registro.html', {})
 def login(request):
     return render(request, 'registration/login.html', {})
 def sobre(request):
