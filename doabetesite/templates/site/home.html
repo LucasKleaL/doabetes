@@ -177,6 +177,7 @@
 
 <body>
     <header>
+
         <div class="container" id="nav-container">
             <nav class="navbar navbar-expand-lg fixed-top">
                 <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo 2redondo.png' %}" alt="Doabetes">
@@ -187,20 +188,34 @@
                     <i class="fa fa-bars" aria-hidden="true" style="color: rgb(39, 120, 190); "></i>
                 </button>
                 <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
+                    {% if user.is_authenticated %}
                     <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
                     <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
                     <a class="nav-item nav-link" id="depoimentos-menu" href="#">Depoimentos</a>
                     <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
                     <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+                    {% else %}
+                    <a class="nav-item nav-link" id="depoimentos-menu" href="#">Depoimentos</a>
+                    <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
+                    <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+                    {% endif %}
+
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
-                    <a class="nav-item nav-link" id="login-menu" href="login">Login</a>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                    </li>
+                    {% else %}
+                    <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Login</a>
                     <a class="nav-item nav-link" id="registro-menu" href="registro">Registre-se</a>
+                    {% endif %}
                 </div>
         </div>
         </nav>
     </header>
     <main>
+
         <div class="container-fluid"></div>
         <div id="mainSlider" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
@@ -237,7 +252,8 @@
         <div class="row">
             <div class="col-md-12">
                 <h1 id="title-map" style="padding-top: 35px; text-align: center;font-family: roboto; font-size: 31px;">
-                    Acompanhe a movimentação de doações no Brasil</h1>
+                    Acompanhe a movimentação de doações no Brasil
+                </h1>
             </div>
         </div>
         </div>

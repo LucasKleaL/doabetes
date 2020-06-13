@@ -402,32 +402,16 @@
 
   <body>
     <!--FORMULÁRIO DE LOGIN-->
-    <div id="login">
-      <form name="formuser" method="post" action="">
-        <h1 style="font-family: roboto;">Login</h1>
-
-          Email:<input id="email_login" name="email_login" required="required" type="text" placeholder="ex. seuemail@mail.com" />
-
-        
-          Senha:<input id="senha_login" name="senha_login" autocomplete="off" required="required" type="password"
-            placeholder="ex. senha" />
-
-
-        <p>
-          <input type="checkbox" name="manterlogado" id="manterlogado" value="" />
-          <label for="manterlogado">Manter-me logado</label>
-        </p>
-
-        <p>
-          <input type="submit" onclick="return validar()" value="Logar" />
-        </p>
-
-        <p class="link">
-          Ainda não tem conta?
-          <a href="registro">Cadastre-se</a>
-        </p>
-      </form>
+    {% block content %}
+    <div class="container">
+        <h1>Faça o seu login</h1>
+        <form action="." method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="btn btn-primary" type="submit" value="Login">
+        </form>
     </div>
+{% endblock %}
   </body>
 
 </html>

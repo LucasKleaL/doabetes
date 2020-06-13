@@ -5,7 +5,7 @@ def home(request):
 def registro(request):
     return render(request, 'site/paginaRegistro.html', {})
 def login(request):
-    return render(request, 'site/paginaLogin.html', {})
+    return render(request, 'registration/login.html', {})
 def sobre(request):
     return render(request, 'site/paginaSobre.html', {})
 def contato(request):
