@@ -211,8 +211,9 @@
                     <a class="nav-item nav-link" id="registro-menu" href='/account/registro'>Registre-se</a>
                     {% endif %}
                 </div>
+            </nav>
         </div>
-        </nav>
+
     </header>
     <main>
 
@@ -228,7 +229,11 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="carousel-h2">Aparelho medidor de glicose?</h2>
                         <p>Conte conosco, temos um serviço para te auxiliar.</p>
+                        {% if user.is_authenticated %}
                         <a href="produtos" class="main-btn">Ver acessórios disponíveis</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="main-btn">Ver acessórios disponíveis</a>
+                        {% endif %}
                     </div>
                 </div>
                 <div class="carousel-item">
@@ -237,11 +242,15 @@
                     <div class="carousel-caption d-none d-md-block">
                         <h2 class="carousel-h2">Procura insulina para doação?</h2>
                         <p>Conte conosco!</p>
+                        {% if user.is_authenticated %}
                         <a href="produtos" class="main-btn">Ver insumos disponíveis</a>
+                        {% else %}
+                        <a href="{% url 'login' %}" class="main-btn">Ver acessórios insumos</a>
+                        {% endif %}
 
                     </div>
                 </div>
-                
+
             </div>
             <a href="#mainSlider" class="carousel-control-prev" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
