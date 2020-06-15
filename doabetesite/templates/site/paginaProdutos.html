@@ -151,6 +151,22 @@
     color: rgb(39, 120, 190);
     text-decoration: none;
   }
+
+  #botao {
+    background-color: #fff;
+    border: 5px solid rgb(39, 120, 190);
+    border-width: 1px;
+    border-radius: 5px;
+    color: rgb(39, 120, 190);
+    padding: 2px 6px;
+  }
+
+  #botao:hover {
+    background-color: rgb(39, 120, 190);
+    border-color: rgb(39, 120, 190);
+    color: rgb(249, 249, 249);
+    text-decoration: none;
+  }
 </style>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -219,82 +235,58 @@
     </div>
   </header>
   <div class="py-5">
-    <div class="container" id="col-md-12">
-      <div class="row">
-        <div class="col-md-12">
-          <h1 class="display-4" id="" style="padding-top: 35px; text-align: left;font-family: roboto; font-size: 31px;">
-            <b>Confira os produtos oferecidos no site:</b><br><br></h1>
-        </div>
         <div class="container-fluid">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-4">
-                <a href="">
-                  <img alt="aparelhomedidor" src="static/img/produto_imagem/aparelho.png" width=280 height="180"><br>
-                  <h2 id="aparelho">Aparelho medidor de glicose e acessórios</h2>
-                  <p>
-                </a>
-                Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-                mollis euismod. Donec sed odio dui.
-                </p>
-
-                <a href="#">
-                  <img alt="orto" src="static/img/produto_imagem/orto.png" width=280 height="180"><br>
-                  <h3 style="font-family: Roboto; color: rgb(39, 120, 190);">Acessórios ortopédicos</h3>
-                </a>
-              </div>
-              <div class="col-md-4">
-                <a href="#">
-                  <img alt="canetaaplicacao" src="static/img/produto_imagem/caneta.png" width=280 height="180"><br>
-                  <h2 style="font-family: Roboto; color: rgb(39, 120, 190);">Seringas e canetas de aplicação</h2>
-                </a>
-                  <p>
-                    Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                    mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-                    mollis euismod. Donec sed odio dui.
-                  </p>
-                  <br>
-
-                    <a href="#">
-                      <img alt="bombadeinsulina" src="static/img/produto_imagem/bomba.png" width=280 height="180"><br>
-                      <h2 style="font-family: Roboto; color: rgb(39, 120, 190);">Insumos de bomba de insulina</h2>
-                    </a>
-              </div>
-              <div class="col-md-4">
-                  <a href="#">
-                    <img alt="insulina" src="static/img/produto_imagem/insulina.png" width=280 height="180"><br>
-                    <h2 style="font-family: Roboto; color: rgb(39, 120, 190);">Insulinas e outros medicamentos</h2>
-                  </a>
-                <p>
-                  Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-                  mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-                  mollis euismod. Donec sed odio dui.
-                </p>
-                <br>
-                  <div class="col-md-4"></div>
-                  <a href="#">
-                    <img alt="insulina" src="static/img/produto_imagem/baterias.png" width=280 height="180"><br>
-                    <h2 style="font-family: Roboto; color: rgb(39, 120, 190);">Pilhas, baterias e carregadores</h2>
-                  </a>
-                </div>
-              </div>
-            </div>
+          <div class="container" style="padding-left: 0px;">
+            <h3 id="aparelho">Aparelho medidor de glicose e acessórios</h3>
+            <img alt="aparelhomedidor" src="static/img/produto_imagem/aparelho.png" width=680 height="420"><br>
+            <p>
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+              mollis euismod.<br> Donec sed odio dui.
+            </p>
+            <p style="color: rgb(145, 230, 18);">Disponibilidade: 02</p>
+            <button id="botao" onclick="window.location.href='#'">Doar</button>
+            <button id="botao" onclick="window.location.href='#'">Solicitar</button>
           </div>
-        </div>
-      </div>
-    </div>
 
-  </div>
-  </div>
-  </div>
+          <div class="container" style="padding-left: 0px;">
+            <h3 id="aparelho">Acessórios ortopédicos</h3>
+            <img alt="aparelhomedidor" src="static/img/produto_imagem/orto.png" width=680 height="420"><br>
+            <p>
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+              mollis euismod.<br> Donec sed odio dui.
+            </p>
+            <p style="color: rgb(231, 34, 34);">Disponibilidade: 00</p>
+            
+            <button id="botao" onclick="window.location.href='#'">Doar</button>
+            <button id="botao" onclick="window.location.href='#'">Solicitar</button>
+          </div>
 
-
-  </div>
-  </div>
-  </div>
-  </div>
-
+          <div class="container" style="padding-left: 0px;">
+            <h3 id="aparelho">Insumos de bomba de insulina</h3>
+            <img alt="aparelhomedidor" src="static/img/produto_imagem/bomba.png" width=680 height="420"><br>
+            <p>
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+              mollis euismod.<br> Donec sed odio dui.
+            </p>
+            <p style="color: rgb(231, 34, 34);">Disponibilidade: 00</p>            
+            <button id="botao" onclick="window.location.href='#'">Doar</button>
+            <button id="botao" onclick="window.location.href='#'">Solicitar</button>
+          </div>
+          <div class="container" style="padding-left: 0px;">
+            <h3 id="aparelho">Pilhas, baterias e carregadores</h3>
+            <img alt="aparelhomedidor" src="static/img/produto_imagem/baterias.png" width=680 height="420"><br>
+            <p>
+              Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
+              mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
+              mollis euismod.<br> Donec sed odio dui.
+            </p>
+            <p style="color: rgb(145, 230, 18);">Disponibilidade: 06</p>
+            
+            <button id="botao" onclick="window.location.href='#'">Doar</button>
+            <button id="botao" onclick="window.location.href='#'">Solicitar</button>
 </body>
 
 </html>
