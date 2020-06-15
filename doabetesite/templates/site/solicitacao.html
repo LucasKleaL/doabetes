@@ -146,8 +146,6 @@
         .title-map {
             font-size: 6px;
         }
-
- 
     </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -216,69 +214,56 @@
             </nav>
         </div>
     </header>
-    <main>
-
-        <div class="container-fluid"></div>
-        <div id="mainSlider" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#mainSlider" data-slide-to="0" class="active"></li>
-                <li data-target="#mainSlider" data-slide-to="1"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img id="imagem1" src="static/img/aparelho000.png" class="d-block w-100" alt="Insulina">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2 class="carousel-h2">Aparelho medidor de glicose?</h2>
-                        <p>Conte conosco, temos um serviço para te auxiliar.</p>
-                        {% if user.is_authenticated %}
-                        <a href="produtos" class="main-btn">Ver acessórios disponíveis</a>
-                        {% else %}
-                        <a href="{% url 'login' %}" class="main-btn">Ver acessórios disponíveis</a>
-                        {% endif %}
-                    </div>
-                </div>
-                <div class="carousel-item">
-
-                    <img src="static/img/insulina00.png" class="d-block w-100" alt="Acessórios">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h2 class="carousel-h2">Procura insulina para doação?</h2>
-                        <p>Conte conosco!</p>
-                        {% if user.is_authenticated %}
-                        <a href="produtos" class="main-btn">Ver insumos disponíveis</a>
-                        {% else %}
-                        <a href="{% url 'login' %}" class="main-btn">Ver acessórios insumos</a>
-                        {% endif %}
-
-                    </div>
-                </div>
-
-            </div>
-            <a href="#mainSlider" class="carousel-control-prev" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Voltar</span>
-            </a>
-            <a href="#mainSlider" class="carousel-control-next" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Próximo</span>
-            </a>
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <h1 id="title-map" style="padding-top: 35px; text-align: center;font-family: roboto; font-size: 31px;">
-                    Acompanhe a movimentação de doações no Brasil
-                </h1>
-            </div>
-        </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-11 w-100" style="padding-top: 0px; padding-left: 120px;"><iframe width="100%"
-                        height="420" scrolling="no" frameborder="1"
-                        src="https://www.google.com/maps/d/u/0/embed?mid=1C79VECHdWofDRex5HYHKD1To_J2r3Cti"></iframe>
-                </div>
-            </div>
-        </div>
-    </main>
-    <script src="js/scripts.js"></script>
+    <div class="container" style="padding-top: 100px;">
+        <form name="form-doacoes" action="{% url 'solicitacaoEnviada' %}">
+            <h4 style="font-family: Roboto; font-size: 22px;">Qual produto você deseja solicitar? <br><br> Aparelho medidor de glicose:</h4>
+            
+            <select id="cars" name="produtos" required>
+                <option value="insumos">Injex sens 2</option>
+                <option value="pilhas">Testline</option>
+                <option value="outros">Nenhum</option>
+            </select>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Insulina:</h4>
+            <select id="cars" name="produtos" required>
+                <option value="outros">Lenta (Humulin L, Novolin L)</option>
+                <option value="aparelho">NPL (Humalog Mix)</option>
+                <option value="acessorios">Novorapid</option>
+                <option value="insumos">Humulin R</option>
+                <option value="pilhas">Novolin R</option>
+                <option value="insumos">Nenhum</option>
+            </select>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Insumos de bomba de insulina</h4>
+            <select id="cars" name="produtos" required>
+                <option value="insumos">Nenhuma opção disponível</option>
+            </select>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Acessórios para aplicação de insulina:</h4>
+            <select id="cars" name="produtos" required>
+                <option value="insumos">Canetas</option>
+                <option value="insumos">Nenhum</option>
+            </select>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Produtos ortopédicos:</h4>
+            <select id="cars" name="produtos" required>
+                <option value="insumos">Nenhuma opção disponível</option>
+            </select>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Forneça um email para contato:</h4>
+            <input type="email" placeholder="ex. email@mail.com" required>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Forneça seu CEP (somente números):</h4>
+            <input type="number" placeholder="CEP" required>
+            <br><br>
+            <h4 style="font-family: Roboto; font-size: 22px;">Envie uma mensagem ao doador:</h4>
+            <textarea name="descricao" rows="5" cols="35" placeholder="Informe suas condições e de que maneira esse produto irá te ajudar..."
+                required></textarea>
+            <br><br>
+        
+            <input type="submit" value="Enviar">
+        </form>
+    </div>
 </body>
+
 </html>

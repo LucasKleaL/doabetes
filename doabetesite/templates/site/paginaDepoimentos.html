@@ -146,6 +146,7 @@
     .title-map {
       font-size: 6px;
     }
+    
   </style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -186,7 +187,6 @@
           <div class="collaps navbar-collapse justify-content-center" id="linksEsquerda">
             {% if user.is_authenticated %}
             <a class="nav-item nav-link" id="produtos-menu" href="produtos">Produtos</a>
-            <a class="nav-item nav-link" id="ultimas-doa-menu" href="#">Últimas Doações </a>
             <a class="nav-item nav-link" id="depoimentos-menu" href="depoimentos">Depoimentos</a>
             <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
             <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
@@ -215,56 +215,46 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-12">
-        <h3>
-          Depoimentos
-        </h3>
-        <p>
+        <p style="padding-top: 100px; font-family: Roboto; font-size: 23px;">
           Confira o que os usuários têm a dizer sobre a plataforma DOAbetes.
         </p>
       </div>
     </div>
     <div class="row">
-      <div class="col-md-4">
-        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
-        <h2>
+      <div class="container">
+        <img alt="Bootstrap Image Preview" src="https://image.flaticon.com/icons/svg/1545/1545569.svg" width="180px" />
+        <h2 style="font-family: Roboto;">
           Ana M. Nascimento
         </h2>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+        <p style="font-family: Roboto;">
+          Donec id elit non mi porta gravida at eget metus.<br> Fusce dapibus, tellus ac cursus commodo, tortor<br> mauris condimentum nibh, ut fermentum massa<br> justo sit amet risus. Etiam porta sem malesuada<br> magna mollis euismod.
           Donec sed odio dui.
         </p>
-        <p>
-          <a class="btn" href="#">View details »</a>
-        </p>
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       </div>
-      <div class="col-md-4">
-        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+      <div class="container">
+        <img alt="Bootstrap Image Preview" src="https://image.flaticon.com/icons/svg/1545/1545569.svg" width="180px" />
         <h2>
           Eduardo F. Eldrisch
         </h2>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
+        <p style="font-family: Roboto;">
+          Donec id elit non mi porta gravida at eget metus.<br> Fusce dapibus, tellus ac cursus commodo, tortor<br> mauris condimentum nibh, ut fermentum massa<br> justo sit amet risus. Etiam porta sem malesuada<br> magna mollis euismod.
           Donec sed odio dui.
         </p>
-        <p>
-          <a class="btn" href="#">View details »</a>
-        </p>
+        <div class="rating">
+          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+          </div>
       </div>
-      <div class="col-md-4">
-        <img alt="Bootstrap Image Preview" src="https://www.layoutit.com/img/sports-q-c-140-140-3.jpg" />
+      <div class="container">
+        <img alt="Bootstrap Image Preview" src="https://image.flaticon.com/icons/svg/1545/1545569.svg" width="180px" />
         <h2>
           Pedro C. Soares
         </h2>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris
-          condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod.
-          Donec sed odio dui.
+        <p style="font-family: Roboto;">
+          Donec id elit non mi porta gravida at eget metus.<br> Fusce dapibus, tellus ac cursus commodo, tortor<br> mauris condimentum nibh, ut fermentum massa<br> justo sit amet risus. Etiam porta sem malesuada<br> magna mollis euismod.
+          Donec sed odio dui.         
         </p>
-        <p>
-          <a class="btn" href="#">View details »</a>
-        </p>
+        <span>☆</span><span>☆</span><span>☆</span><span>☆</span>
       </div>
     </div>
   </div>
