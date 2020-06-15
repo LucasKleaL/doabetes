@@ -390,9 +390,9 @@
           <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
           <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
           {% else %}
-          <a class="nav-item nav-link" id="depoimentos-menu" href="#">Depoimentos</a>
-          <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
-          <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+          <a class="nav-item nav-link" id="depoimentos-menu" href="{% url 'paginaDepoimentos' %}">Depoimentos</a>
+          <a class="nav-item nav-link" id="contato-menu" href="{% url 'paginacontato' %}">Contato</a>
+          <a class="nav-item nav-link" id="sobre-menu" href="{% url 'paginasobre' %}">Sobre</a>
           {% endif %}
 
         </div>

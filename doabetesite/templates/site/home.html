@@ -177,10 +177,10 @@
 
 <body>
     <header>
-
         <div class="container" id="nav-container">
             <nav class="navbar navbar-expand-lg fixed-top">
-                <a id="doabetes" href="home"><img id="logo" src="{% static 'img/logo-branco.png' %}" alt="Doabetes">
+                <a id="doabetes" href="{% url 'home' %}"><img id="logo" src="{% static 'img/logo-branco.png' %}"
+                        alt="Doabetes">
                     DOABETES </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarLinks, #linksEsquerda" aria-controls="#navbarLinks, #linksEsquerda"
@@ -195,9 +195,10 @@
                     <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
                     <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
                     {% else %}
-                    <a class="nav-item nav-link" id="depoimentos-menu" href="#">Depoimentos</a>
-                    <a class="nav-item nav-link" id="contato-menu" href="contato">Contato</a>
-                    <a class="nav-item nav-link" id="sobre-menu" href="sobre">Sobre</a>
+                    <a class="nav-item nav-link" id="depoimentos-menu"
+                        href="{% url 'paginaDepoimentos' %}">Depoimentos</a>
+                    <a class="nav-item nav-link" id="contato-menu" href="{% url 'paginacontato' %}">Contato</a>
+                    <a class="nav-item nav-link" id="sobre-menu" href="{% url 'paginasobre' %}">Sobre</a>
                     {% endif %}
 
                 </div>
@@ -213,7 +214,6 @@
                 </div>
             </nav>
         </div>
-
     </header>
     <main>
 
