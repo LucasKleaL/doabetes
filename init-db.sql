@@ -1,10 +1,12 @@
-select produto.id, produto.nome, marca.nome
+select produto.id, produto.nome, marca.nome, produto."nomeImagem"
 from
     main.doabetesite_produto produto,
     main.doabetesite_marca marca,
     main.doabetesite_marcaproduto mp
 where produto.id = mp.produto_id
     and marca.id = mp.marca_id;
+
+select distinct nome, count (nome) from main.doabetesite_produto having count nome > 1
 
 --apagar resgistro
 delete from main.doabetesite_marcaproduto;
@@ -14,7 +16,7 @@ delete from main.doabetesite_marca;
 
 -- insert tabela marca
 --marcas Aparelho medidor de glicose
-insert into main.doabetesite_produto (nome) values ('Aparelho medidor de glicose');
+insert into main.doabetesite_produto (nome, nomeImagem) values ('Aparelho medidor de glicose', 'static/img/produto_imagem/aparelho.png');
 insert into main.doabetesite_marca (nome) values ('Accu check active');
 insert into main.doabetesite_marca (nome) values ('Accu check performa');
 insert into main.doabetesite_marca (nome) values ('Breeze 2');
@@ -28,7 +30,7 @@ insert into main.doabetesite_marcaproduto  (produto_id, marca_id) select (select
 
 
 -- marcas insulina
-insert into main.doabetesite_produto (nome) values ('Insulina');
+insert into main.doabetesite_produto (nome, nomeImagem) values ('Insulina', 'static/img/produto_imagem/insulina.png');
 
 insert into main.doabetesite_marca (nome) values ('Levemir');
 insert into main.doabetesite_marca (nome) values ('Tresiba');
@@ -44,9 +46,9 @@ insert into main.doabetesite_marcaproduto  (produto_id, marca_id) select (select
 
 
 --marcas Insumos de bomba de insulina
-insert into main.doabetesite_produto (nome) values ('Catéter');
-insert into main.doabetesite_produto (nome) values ('Aplicadores');
-insert into main.doabetesite_produto (nome) values ('Reservatório');
+insert into main.doabetesite_produto (nome, nomeImagem) values ('Catéter', 'static/img/produto_imagem/bomba.png');
+insert into main.doabetesite_produto (nome, nomeImagem) values ('Aplicadores', 'static/img/produto_imagem/orto.png');
+insert into main.doabetesite_produto (nome, nomeImagem) values ('Reservatório', 'static/img/produto_imagem/caneta.png');
 
 insert into main.doabetesite_marca (nome) values ('Medtronic');
 insert into main.doabetesite_marca (nome) values ('Roche');
@@ -60,7 +62,7 @@ insert into main.doabetesite_marcaproduto  (produto_id, marca_id) select (select
 
  insert into main.doabetesite_marcaproduto  (produto_id, marca_id) select (select produto.id from main.doabetesite_produto produto where produto.nome ='Reservatório'),marca.id from main.doabetesite_marca marca where marca.nome  in ('Medtronic','Roche','MicroPort','Deka','IACollaborative');
 
-
+commit
 
 
 

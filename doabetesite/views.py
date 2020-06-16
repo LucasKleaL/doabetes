@@ -15,9 +15,8 @@ def sobre(request):
 def contato(request):
     return render(request, 'site/paginaContato.html', {})
 def produtos(request):
-    produtos = get_list_or_404(Produto)
     marcaProdutos = get_list_or_404(MarcaProduto)
-    return render(request, 'site/paginaProdutos.html', {'produtos': produtos, 'marcaProdutos': marcaProdutos})
+    return render(request, 'site/paginaProdutos.html', {'marcaProdutos': marcaProdutos})
 
 def depoimentos(request):
     return render(request, 'site/paginaDepoimentos.html', {})

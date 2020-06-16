@@ -19,7 +19,8 @@ class Marca(models.Model):
     nome = models.CharField(max_length=200, default="")
 
 class Produto(models.Model):
-    nome = models.CharField(max_length=200, default="")
+    nome = models.CharField(max_length=200, default=" ", unique=True)
+    nomeImagem = models.CharField(max_length=200, default="")
 
 class MarcaProduto(models.Model):
     marca = models.ForeignKey(Marca, on_delete=models.CASCADE)
