@@ -1,3 +1,4 @@
+
 {% load static %}
 <!DOCTYPE html>
 <html>
@@ -200,6 +201,7 @@
 </head>
 
 <body>
+
   <header>
     <div class="container" id="nav-container">
       <nav class="navbar navbar-expand-lg fixed-top">
@@ -237,62 +239,31 @@
     </div>
   </header>
   <div class="py-5">
-    <div class="container-fluid">
-      <div class="container" style="padding-left: 0px;">
-        <h3 id="aparelho">Aparelho medidor de glicose e acessórios</h3>
-        <img alt="aparelhomedidor" src="static/img/produto_imagem/aparelho.png" width=680 height="420"><br>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-          mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-          mollis euismod.<br> Donec sed odio dui.
-        </p>
-        <p style="color: rgb(145, 230, 18);">Disponibilidade: 02</p>
-        <button id="botao" onclick="window.location.href='doacao'">Doar</button>
-        <button id="botao" onclick="window.location.href='solicitacao'">Solicitar</button>
-      </div>
+<<<<<<< HEAD
 
-      <div class="container" style="padding-left: 0px;">
-        <h3 id="aparelho">Acessórios ortopédicos</h3>
-        <img alt="aparelhomedidor" src="static/img/produto_imagem/orto.png" width=680 height="420"><br>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-          mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-          mollis euismod.<br> Donec sed odio dui.
-        </p>
-        <p style="color: rgb(231, 34, 34);">Disponibilidade: 00</p>
-
-        <button id="botao" onclick="window.location.href='doacao'">Doar</button>
-        <button id="botao" onclick="avisar()">Avise-me</button>
-      </div>
-
-      <div class="container" style="padding-left: 0px;">
-        <h3 id="aparelho">Insumos de bomba de insulina</h3>
-        <img alt="aparelhomedidor" src="static/img/produto_imagem/bomba.png" width=680 height="420"><br>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-          mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-          mollis euismod.<br> Donec sed odio dui.
-        </p>
-        <p style="color: rgb(231, 34, 34);">Disponibilidade: 00</p>
-        <button id="botao" onclick="window.location.href='doacao'">Doar</button>
-        <button id="botao" onclick="avisar()">Avise-me</button>
-      </div>
-      <div class="container" style="padding-left: 0px;">
-        <h3 id="aparelho">Pilhas, baterias e carregadores</h3>
-        <img alt="aparelhomedidor" src="static/img/produto_imagem/baterias.png" width=680 height="420"><br>
-        <p>
-          Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor
-          mauris<br> condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna
-          mollis euismod.<br> Donec sed odio dui.
-        </p>
-        <p style="color: rgb(145, 230, 18);">Disponibilidade: 06</p>
-
-        <button id="botao" onclick="window.location.href='doacao'">Doar</button>
-        <button id="botao" onclick="window.location.href='solicitacao'">Solicitar</button>
-      </div>
-    </div>
+=======
+    {% if marcaProdutos %}
+      <ul>
+        {% for marcaProduto in marcaProdutos %}
+          <div class="container-fluid">
+            <div class="container" style="padding-left: 0px;">
+              <h3 id="aparelho">{{marcaProduto.produto.nome}}</h3>
+              <img alt="aparelhomedidor" src="{{marcaProduto.produto.nomeImagem}}" width=340 height="210"><br>
+              <p>
+              <h4>{{marcaProduto.marca.nome}}</h4>
+              </p>
+              <button id="botao" onclick="window.location.href='doacao'">Doar</button>
+              <button id="botao" onclick="window.location.href='solicitacao'">Solicitar</button>
+            </div>
+          </div>
+        {% endfor %}
+      </ul>
+    {% else %}
+      <p>Sem produtos</p>
+    {% endif %}
   </div>
-
+>>>>>>> tiago
 </body>
 
 </html>
+
