@@ -203,8 +203,8 @@
                 </div>
                 <div class="collapse navbar-collapse justify-content-end" id="navbarLinks">
                     {% if user.is_authenticated %}
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'logout' %}">Sair</a>
+                    <li class="nav-item" style="list-style-type: none;">
+                        <a class="nav-link" href="{% url 'logout' %}" style="font-family: Roboto; color: rgb(39, 120, 190);">Sair</a>
                     </li>
                     {% else %}
                     <a class="nav-item nav-link" id="login-menu" href="{% url 'login' %}">Login</a>
